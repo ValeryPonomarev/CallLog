@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Журнал звонков</string>
+    <string name="my_number">+79002413312</string>
+    <string name="refresh">Обновить</string>
+    <string name="packageName">com.example.drmiller.calllog</string>
+    <string name="From">От кого:</string>
+    <string name="To">Кому:</string>
+    <string name="State">Статус:</string>
+    <string name="Duration">Длительность:</string>
+    <string name="BeginCall">Начало:</string>
+    <string name="EndCall">Окончание:</string>
+    <string name="CallRecordFile">Файл разговора:</string>
+    <string name="Play">Воспроизвести</string>
+    <string name="Stop">Остановить</string>
+    <string name="Incoming">Входящий</string>
+    <string name="Outgoing">Исходящий</string>
+    <string name="Missing">Пропущеный</string>
+    <string name="Open">Открыть</string>
+    <string name="callinvoke">Позвонить</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Estimate">Оценить</string>
+</resources>

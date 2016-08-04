@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="activity_settings_MyNumber"
+        android:title="Телефон"
+        android:summary="Ваш номер телефона"
+        android:defaultValue="89001234567"
+        android:dialogTitle="Введите ваш номер телефона"
+        android:inputType="phone"
+        />
+    <CheckBoxPreference
+        android:key="activity_settings_CallRecordEnabled"
+        android:title="Запись разговоров"
+        android:summary="Вести запись разговоров"
+        android:defaultValue="true"/>
+    <PreferenceCategory
+        android:title="Настройки синхронизации">
+
+        <CheckBoxPreference
+            android:key="activity_settings_CallSynchronization"
+            android:title="Синхронизация"
+            android:summary="Синхронизация вызовов с сервером"
+            android:defaultValue="false"/>
+        <CheckBoxPreference
+            android:key="activity_settings_WIFIOnly"
+            android:title="Только WiFi"
+            android:summary="Использовать только WiFi соединение"
+            android:defaultValue="true"
+            android:dependency="activity_settings_CallSynchronization"/>
+        <EditTextPreference
+            android:key="activity_settings_ServerAddress"
+            android:title="IP"
+            android:summary="Адрес сервера"
+            android:defaultValue="http://10.0.2.2:3000"
+            android:dialogTitle="Введите адрес сервера - приемника"
+            android:dependency="activity_settings_CallSynchronization"/>
+        <com.easysales.calllog.Data.LongEditTextPreference
+            android:key="activity_settings_SyncPeriod"
+            android:title="Период синхронизации (мин)"
+            android:defaultValue="30"
+            android:dialogTitle="Введите Период синхронизации в минутах"
+            android:inputType="number"
+            android:dependency="activity_settings_CallSynchronization"/>
+    </PreferenceCategory>
+</PreferenceScreen>

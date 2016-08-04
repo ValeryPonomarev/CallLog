@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.easysales.calllog.Activities.CallActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+       <TextView
+            android:id="@+id/textViewCallFrom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/From"/>
+        <TextView
+            android:id="@+id/textViewCallTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/To" />
+        <TextView
+            android:id="@+id/textViewCallState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/State" />
+        <TextView
+            android:id="@+id/textViewCallDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Duration" />
+        <TextView
+            android:id="@+id/textViewCallBegin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/BeginCall" />
+        <TextView
+            android:id="@+id/textViewCallEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/EndCall" />
+        <TextView
+            android:id="@+id/textViewCallRecordFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/CallRecordFile" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <Button
+                android:id="@+id/btnCallInvoke"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/callinvoke"/>
+
+            <Button
+                android:id="@+id/btnCallPlayFileRecord"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/Play"/>
+            <Button
+                android:id="@+id/btnCallStopFileRecord"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/Stop"/>
+            <Button
+                android:id="@+id/btnCallOpenFileRecord"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:text="@string/Open"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
