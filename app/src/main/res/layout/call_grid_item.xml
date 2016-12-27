@@ -23,16 +23,27 @@
             android:id="@+id/callGridItemTextTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".60"
-            android:textSize="18sp"
-            android:textStyle="bold"/>
-
+            android:layout_weight=".50"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Name"
+            android:gravity="center_vertical|left" />
+        <TextView
+            android:id="@+id/callGridItemPhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".25"
+            android:textSize="9sp"
+            android:text="+79001234567"
+            android:gravity="center_vertical|left" />
         <TextView
             android:id="@+id/callGridItemTextDescription"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight=".40"
-            android:textSize="9sp" />
+            android:layout_weight=".25"
+            android:textSize="9sp"
+            android:text="description"
+            android:gravity="center_vertical|left" />
 
     </LinearLayout>
 
