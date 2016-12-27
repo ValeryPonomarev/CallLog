@@ -66,11 +66,13 @@ public class MyPhoneCallReceiver extends PhoneCallReceiver {
     }
 
     private void startCallProcess(Context context, CallState state, String numberFrom, String numberTo, boolean isFirstLine) {
-        Intent intent = new Intent(context, CallProcessService.class);
-        intent.putExtra("State", state.getValue());
-        intent.putExtra("NumberFrom", numberFrom);
-        intent.putExtra("NumberTo", numberTo);
-        intent.putExtra("IsFirstLine", isFirstLine);
-        context.startService(intent);
+        if(SettingsHelper.getIsCallRecording()) {
+            Intent intent = new Intent(context, CallProcessService.class);
+            intent.putExtra("State", state.getValue());
+            intent.putExtra("NumberFrom", numberFrom);
+            intent.putExtra("NumberTo", numberTo);
+            intent.putExtra("IsFirstLine", isFirstLine);
+            context.startService(intent);
+        }
     }
 }

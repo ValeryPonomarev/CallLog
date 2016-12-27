@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Журнал звонков</string>
-    <string name="my_number">+79002413312</string>
+    <string name="website">www.EasySales.com</string>
+    <string name="my_number">+79001234567</string>
     <string name="refresh">Обновить</string>
     <string name="packageName">com.example.drmiller.calllog</string>
     <string name="From">От кого:</string>
@@ -19,4 +20,16 @@
     <string name="callinvoke">Позвонить</string>
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="Estimate">Оценить</string>
+    <string name="Calls">Звонки</string>
+    <string name="Settings">Настройки</string>
+    <string-array name="mainNavMenu">
+        <item>Звонки</item>
+        <item>Настройки</item>
+        <item>Оценить!</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="ClearCallHistory">Очистить историю</string>
+
 </resources>

@@ -23,8 +23,7 @@ public final class SettingsHelper {
         public static final String UsageWIFIOnlyName = "activity_settings_WIFIOnly";
     }
 
-
-    public static boolean getIsCallRecord() {
+    public static boolean getIsCallRecording() {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext());
         return settings.getBoolean(SettingNames.IsCallRecordName, false);
     }

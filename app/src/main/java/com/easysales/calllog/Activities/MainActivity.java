@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
 
     private void OpenCallList()
     {
-        Intent intent = new Intent(this, CallListActivity.class);
+        Intent intent = new Intent(this, CallListFragment.class);
         startActivity(intent);
     }
 

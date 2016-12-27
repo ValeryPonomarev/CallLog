@@ -7,23 +7,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.easysales.calllog.Activities.CallListActivity">
+    tools:context=".Activities.CallListFragment">
 
     <GridView
         android:id="@+id/callGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="1"
-        android:layout_above="@+id/buttonRefresh"></GridView>
+        android:numColumns="1"></GridView>
+        <!--android:layout_above="@+id/buttonRefresh"-->
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/refresh"
-        android:id="@+id/buttonRefresh"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+    <!--<Button-->
+        <!--style="?android:attr/buttonStyleSmall"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="@string/refresh"-->
+        <!--android:id="@+id/buttonRefresh"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
 
 </RelativeLayout>

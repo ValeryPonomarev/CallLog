@@ -3,6 +3,7 @@ package com.easysales.calllog.Utils;
 import android.content.Context;
 import android.os.Environment;
 
+import com.easysales.calllog.MyApplication;
 import com.easysales.calllog.R;
 
 import java.io.File;
@@ -32,6 +33,15 @@ public final class IOHelper {
             catalog.mkdir();
         }
         return String.format("%1$s/%2$s/callRecord_%3$s.%4$s", Environment.getExternalStorageDirectory(), catalogName, dateFormat.format(callDate), RECORD_FILE_EXTENSION);
+    }
+
+    public static void RemoveCallsDirectory()
+    {
+        File catalog = new File(Environment.getExternalStorageDirectory(), MyApplication.getContext().getString(R.string.packageName));
+        if(catalog.exists())
+        {
+            catalog.delete();
+        }
     }
 
 }
