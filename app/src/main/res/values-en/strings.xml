@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Call log</string>
+    <string name="website">www.EasySales.com</string>
+    <string name="my_number">+79001234567</string>
+    <string name="refresh">Refresh</string>
+    <string name="packageName">com.example.drmiller.calllog</string>
+    <string name="From">From:</string>
+    <string name="To">To:</string>
+    <string name="State">State:</string>
+    <string name="Duration">Duration:</string>
+    <string name="BeginCall">Begin:</string>
+    <string name="EndCall">End:</string>
+    <string name="CallRecordFile">Call file:</string>
+    <string name="Play">Play</string>
+    <string name="Stop">Stop</string>
+    <string name="Incoming">Incoming</string>
+    <string name="Outgoing">Outgoing</string>
+    <string name="Missing">Missing</string>
+    <string name="Open">Open</string>
+    <string name="callinvoke">Call</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="Estimate">Estimate</string>
+    <string name="Calls">Call list</string>
+    <string name="Settings">Settings</string>
+    <string-array name="mainNavMenu">
+        <item>Call list</item>
+        <item>Settings</item>
+        <item>Estimate!</item>
+    </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="ClearCallHistory">Clear history</string>
+
+</resources>
