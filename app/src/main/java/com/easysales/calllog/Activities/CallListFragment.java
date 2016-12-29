@@ -1,6 +1,7 @@
 package com.easysales.calllog.Activities;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,7 +14,9 @@ import android.widget.GridView;
 
 import com.easysales.calllog.Data.CallAdapter;
 import com.easysales.calllog.Entities.Call;
+import com.easysales.calllog.Entities.EntityFactoryBuilder;
 import com.easysales.calllog.R;
+import com.easysales.calllog.Repository.Call.ICallRepository;
 import com.easysales.calllog.Repository.RepositoryFactory;
 
 import java.util.ArrayList;
@@ -22,7 +25,6 @@ import java.util.List;
 public class CallListFragment extends Fragment {
 
     CallAdapter adapter;
-    List<Call> calls;
 
     @Nullable
     @Override
@@ -31,18 +33,9 @@ public class CallListFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_call_list, null);
 
         GridView gridView = (GridView)view.findViewById(R.id.callGrid);
-//        Button buttonRefresh = (Button)view.findViewById(R.id.buttonRefresh);
 
-        calls = new ArrayList<Call>();
-        adapter = new CallAdapter(getActivity(), calls);
+        adapter = new CallAdapter(getActivity(), ((ICallRepository)RepositoryFactory.GetRepository(getActivity(), RepositoryFactory.RepositoryNames.CALL_REPOSITORY)).FindAllOrderedByDateDesc());
         gridView.setAdapter(adapter);
-
-//        buttonRefresh.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                RefreshCalls();
-//            }
-//        });
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -52,39 +45,9 @@ public class CallListFragment extends Fragment {
             }
         });
 
-        RefreshCalls();
+        //RefreshCalls();
         return view;
     }
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_call_list);
-//
-//        GridView gridView = (GridView)findViewById(R.id.callGrid);
-//        Button buttonRefresh = (Button)findViewById(R.id.buttonRefresh);
-//
-//        calls = new ArrayList<Call>();
-//        RefreshCalls();
-//        adapter = new CallAdapter(this, calls);
-//        gridView.setAdapter(adapter);
-//
-//        buttonRefresh.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                RefreshCalls();
-//                adapter.notifyDataSetChanged();
-//            }
-//        });
-//
-//        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                ShowCallActivity((Call)parent.getItemAtPosition(position));
-//            }
-//        });
-//    }
 
     private void ShowCallActivity(Call call)
     {
@@ -95,8 +58,6 @@ public class CallListFragment extends Fragment {
 
     public void RefreshCalls()
     {
-        calls.clear();
-        calls.addAll(RepositoryFactory.GetRepository(getActivity(), RepositoryFactory.RepositoryNames.CALL_REPOSITORY).FindAllList());
-        adapter.notifyDataSetChanged();
+        adapter.changeCursor(((ICallRepository)RepositoryFactory.GetRepository(getActivity(), RepositoryFactory.RepositoryNames.CALL_REPOSITORY)).FindAllOrderedByDateDesc());
     }
 }

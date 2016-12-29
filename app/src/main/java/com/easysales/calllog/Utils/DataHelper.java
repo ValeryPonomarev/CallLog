@@ -1,6 +1,7 @@
 package com.easysales.calllog.Utils;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Date;
 public final class DataHelper {
     public static String ToDateTimeFormat(Date date)
     {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy kk:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm");
         return dateFormat.format(date);
     }
 
@@ -34,5 +35,31 @@ public final class DataHelper {
             return String.format("%1$d сек", seconds);
         }
         else return "0 сек";
+    }
+
+    public static String ToDateFormat(Date date)
+    {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
+        return dateFormat.format(date);
+    }
+
+    /**
+    * Возвращает true если даты отличаются друг от друга (не учитывая время)
+    */
+    public static boolean IsDiferentDate(Date date1, Date date2)
+    {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date1);
+        int daysInYear1 = calendar.get(Calendar.DAY_OF_YEAR);
+
+        calendar = Calendar.getInstance();
+        calendar.setTime(date2);
+        int daysInYear2 = calendar.get(Calendar.DAY_OF_YEAR);
+
+        if(daysInYear1 != daysInYear2 || date1.getYear() != date2.getYear()){
+            return true;
+        }
+
+        return false;
     }
 }

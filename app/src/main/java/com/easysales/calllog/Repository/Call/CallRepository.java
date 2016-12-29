@@ -2,6 +2,8 @@ package com.easysales.calllog.Repository.Call;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.util.Log;
 
 import com.easysales.calllog.Entities.Call;
 import com.easysales.calllog.Entities.CallFactory;
@@ -12,7 +14,7 @@ import java.util.List;
 /**
  * Created by drmiller on 05.07.2016.
  */
-public class CallRepository extends RepositoryDB<Call> {
+public class CallRepository extends RepositoryDB<Call> implements ICallRepository {
     public CallRepository(Context context) {
         super(context);
     }
@@ -90,5 +92,12 @@ public class CallRepository extends RepositoryDB<Call> {
     {
         String sql = String.format("%1$s WHERE IsSynchronized is NULL or IsSynchronized = %2$d", GetBaseQuery(), (syncState ? 1 : 0));
         return BuildEntitiesFromSql(sql);
+    }
+
+    @Override
+    public Cursor FindAllOrderedByDateDesc() {
+        String query = GetBaseQuery();
+        query = String.format(query + String.format(" ORDER BY %1$s DESC", CallFactory.FieldNames.BeginDate));
+        return GetDatabase().rawQuery(query, null);
     }
 }
