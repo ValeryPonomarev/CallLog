@@ -10,12 +10,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.easysales.calllog.MyApplication;
 import com.easysales.calllog.R;
 import com.easysales.calllog.Utils.IOHelper;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class Main2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -27,6 +32,29 @@ public class Main2Activity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        //ads
+        MobileAds.initialize(this, this.getString(R.string.banner_ad_unit_id));
+        final AdView mAdView = (AdView) findViewById(R.id.adView);
+
+        mAdView.setAdListener(new AdListener() {
+            @Override
+            public void onAdFailedToLoad(int i) {
+                Log.d("AdView", "onAdFailedToLoad:" + String.valueOf(i));
+            }
+
+            @Override
+            public void onAdLoaded() {
+                Log.d("AdView", "onAdLoaded");
+            }
+        });
+
+        AdRequest adRequest = new AdRequest
+                .Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("FULBQWLZLBWGWS4H")
+                .build();
+        mAdView.loadAd(adRequest);
+        //ads
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
