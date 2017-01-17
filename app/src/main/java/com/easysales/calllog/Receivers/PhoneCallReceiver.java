@@ -50,7 +50,7 @@ public abstract class PhoneCallReceiver extends BroadcastReceiver {
         Log.d(LOG_TAG, "Phone number 1: " + intent.getStringExtra(Intent.EXTRA_PHONE_NUMBER));
         Log.d(LOG_TAG, "Phone number 2: " + intent.getExtras().getString(TelephonyManager.EXTRA_INCOMING_NUMBER));
         /**/
-
+        setCurrentNumber("unknown");
         if(intent.getAction().equals(StringConstants.ACTION_OUTGOING_CALL))
         {
             String num = intent.getExtras().getString(Intent.EXTRA_PHONE_NUMBER);
@@ -141,8 +141,8 @@ public abstract class PhoneCallReceiver extends BroadcastReceiver {
     }
 
     private void setCurrentNumber(String newNumber) {
-        //if(newNumber != null && newNumber != "") {
+        if(newNumber != null && newNumber != "") {
             currentNumber = newNumber;
-        //}
+        }
     }
 }

@@ -33,7 +33,6 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             android:gravity="bottom"
-            android:background="@android:color/transparent"
             ads:adSize="SMART_BANNER"
             ads:adUnitId="@string/banner_ad_unit_id"/>
 

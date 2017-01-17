@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
-
+import com.easysales.calllog.R;
 import com.easysales.calllog.Entities.Call;
 import com.easysales.calllog.Entities.CallService;
 import com.easysales.calllog.Entities.CallState;
 import com.easysales.calllog.Entities.CallType;
 import com.easysales.calllog.Media.MyMediaRecoder;
-import com.easysales.calllog.R;
 import com.easysales.calllog.Repository.Call.CallRepository;
 import com.easysales.calllog.Repository.RepositoryFactory;
 import com.easysales.calllog.Utils.IOHelper;
@@ -23,7 +22,6 @@ public class CallProcessService extends Service {
     private MyMediaRecoder mediaRecoder;
     private CallRepository callRepository;
 
-    public static String START_FOREGROUND = "com.example.drmiller.calllog.CallProcessServiceStartForeground";
     private static String LOG_TAG = "CallProcessService";
 
     private Call currentCall;
@@ -45,7 +43,7 @@ public class CallProcessService extends Service {
 
         Notification notification = new NotificationCompat.Builder(this)
                 .setContentTitle(this.getString(R.string.app_name))
-                .setContentText("Производится запись разговора")
+                .setContentText(getString(R.string.callVoiceRecording))
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .build();
 

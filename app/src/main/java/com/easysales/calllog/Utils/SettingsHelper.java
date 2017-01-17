@@ -1,9 +1,11 @@
 package com.easysales.calllog.Utils;
 
+import android.app.Application;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.easysales.calllog.MyApplication;
+import com.easysales.calllog.R;
 
 import java.util.Date;
 
@@ -21,6 +23,7 @@ public final class SettingsHelper {
         public static final String LastDateSyncName = "lastDateSyncName";
         public static final String MyNumberName = "activity_settings_MyNumber";
         public static final String UsageWIFIOnlyName = "activity_settings_WIFIOnly";
+        public static final String IsFirstLaunch = "activity_settings_IsFirstLaunch";
     }
 
     public static boolean getIsCallRecording() {
@@ -69,13 +72,18 @@ public final class SettingsHelper {
     public static String getMyPhoneNumber()
     {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext());
-        return settings.getString(SettingNames.MyNumberName, "+79001234567");
+        return settings.getString(SettingNames.MyNumberName, MyApplication.getContext().getString(R.string.my_number));
     }
 
     public static boolean getUsageWIFIOnly()
     {
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext());
         return settings.getBoolean(SettingNames.UsageWIFIOnlyName, true);
+    }
+
+    public static boolean getIsFirstLaunch() {
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(MyApplication.getContext());
+        return settings.getBoolean(SettingNames.IsFirstLaunch, true);
     }
 
 }

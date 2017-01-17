@@ -18,7 +18,6 @@
     <string name="Missing">Пропущеный</string>
     <string name="Open">Открыть</string>
     <string name="callinvoke">Позвонить</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="Estimate">Оценить</string>
     <string name="Calls">Звонки</string>
     <string name="Settings">Настройки</string>
@@ -31,5 +30,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="ClearCallHistory">Очистить историю</string>
+    <string name="settingsPhoneNumber">Телефон</string>
+    <string name="settingsPhoneNumberDescription">Введите ваш номер телефона</string>
+    <string name="settingsCallRecord">Запись разговоров</string>
+    <string name="settingsCallRecordDescription">Вести запись разговоров</string>
+    <string name="settingsGroupSynchronize">Настройки синхронизации</string>
+    <string name="settingsSynchronize">Синхронизация</string>
+    <string name="settingsSynchronizeDescription">Синхронизация вызовов с сервером</string>
+    <string name="settingsWifiOnly">Только WiFi</string>
+    <string name="settingsWifiOnlyDescription">Использовать только WiFi соединение</string>
+    <string name="settingsServerAddress">Адрес сервера</string>
+    <string name="settingsServerAddressDescription">Введите адрес сервера - приемника</string>
+    <string name="settingsSyncPeriod">Период синхронизации (мин)</string>
+    <string name="settingsSyncPeriodDescription">Введите Период синхронизации в минутах</string>
+    <string name="callVoiceRecording">Производится запись разговора</string>
+    <string name="settingsPhoneNumberSummary">Ваш номер телефона</string>
 
 </resources>

@@ -2,43 +2,43 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
     <EditTextPreference
         android:key="activity_settings_MyNumber"
-        android:title="Телефон"
-        android:summary="Ваш номер телефона"
-        android:defaultValue="89001234567"
-        android:dialogTitle="Введите ваш номер телефона"
+        android:title="@string/settingsPhoneNumber"
+        android:summary="@string/settingsPhoneNumberSummary"
+        android:defaultValue="@string/my_number"
+        android:dialogTitle="@string/settingsPhoneNumberDescription"
         android:inputType="phone"
         />
     <CheckBoxPreference
         android:key="activity_settings_CallRecordEnabled"
-        android:title="Запись разговоров"
-        android:summary="Вести запись разговоров"
+        android:title="@string/settingsCallRecord"
+        android:summary="@string/settingsCallRecordDescription"
         android:defaultValue="true"/>
     <PreferenceCategory
-        android:title="Настройки синхронизации">
+        android:title="@string/settingsGroupSynchronize">
 
         <CheckBoxPreference
             android:key="activity_settings_CallSynchronization"
-            android:title="Синхронизация"
-            android:summary="Синхронизация вызовов с сервером"
+            android:title="@string/settingsSynchronize"
+            android:summary="@string/settingsSynchronizeDescription"
             android:defaultValue="false"/>
         <CheckBoxPreference
             android:key="activity_settings_WIFIOnly"
-            android:title="Только WiFi"
-            android:summary="Использовать только WiFi соединение"
+            android:title="@string/settingsWifiOnly"
+            android:summary="@string/settingsWifiOnlyDescription"
             android:defaultValue="true"
             android:dependency="activity_settings_CallSynchronization"/>
         <EditTextPreference
             android:key="activity_settings_ServerAddress"
             android:title="IP"
-            android:summary="Адрес сервера"
+            android:summary="@string/settingsServerAddress"
             android:defaultValue="http://10.0.2.2:3000"
-            android:dialogTitle="Введите адрес сервера - приемника"
+            android:dialogTitle="@string/settingsServerAddressDescription"
             android:dependency="activity_settings_CallSynchronization"/>
         <com.easysales.calllog.Data.LongEditTextPreference
             android:key="activity_settings_SyncPeriod"
-            android:title="Период синхронизации (мин)"
+            android:title="@string/settingsSyncPeriod"
             android:defaultValue="30"
-            android:dialogTitle="Введите Период синхронизации в минутах"
+            android:dialogTitle="@string/settingsSyncPeriodDescription"
             android:inputType="number"
             android:dependency="activity_settings_CallSynchronization"/>
     </PreferenceCategory>

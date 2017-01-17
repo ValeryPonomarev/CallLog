@@ -18,7 +18,6 @@
     <string name="Missing">Missing</string>
     <string name="Open">Open</string>
     <string name="callinvoke">Call</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="Estimate">Estimate</string>
     <string name="Calls">Call list</string>
     <string name="Settings">Settings</string>
@@ -31,5 +30,20 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="ClearCallHistory">Clear history</string>
+    <string name="settingsPhoneNumber">Phone number</string>
+    <string name="settingsPhoneNumberDescription">Input your phone number</string>
+    <string name="settingsCallRecord">Call recording</string>
+    <string name="settingsCallRecordDescription">Enable call voice recording</string>
+    <string name="settingsGroupSynchronize">Synchronize settings</string>
+    <string name="settingsSynchronize">Synchronize</string>
+    <string name="settingsSynchronizeDescription">Synchronize calls with server</string>
+    <string name="settingsWifiOnly">Only WiFi</string>
+    <string name="settingsWifiOnlyDescription">Use only WiFi connect</string>
+    <string name="settingsServerAddress">Server address</string>
+    <string name="settingsServerAddressDescription">Input server-receiver address</string>
+    <string name="settingsSyncPeriod">Synchronize period</string>
+    <string name="settingsSyncPeriodDescription">Input synchronize period in minutes</string>
+    <string name="callVoiceRecording">Call voice recording...</string>
+    <string name="settingsPhoneNumberSummary">Your phone number</string>
 
 </resources>

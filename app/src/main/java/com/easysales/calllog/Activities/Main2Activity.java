@@ -1,10 +1,16 @@
 package com.easysales.calllog.Activities;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -27,6 +33,7 @@ public class Main2Activity extends AppCompatActivity
 
     DrawerLayout drawer;
     Fragment currentFragment;
+    private final int MY_PERMISSIONS_REQUEST_READ_CONTACTS = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +57,8 @@ public class Main2Activity extends AppCompatActivity
 
         AdRequest adRequest = new AdRequest
                 .Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("FULBQWLZLBWGWS4H")
+                //.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                //.addTestDevice("FULBQWLZLBWGWS4H")
                 .build();
         mAdView.loadAd(adRequest);
         //ads
@@ -68,6 +75,7 @@ public class Main2Activity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         OpenCallList();
+        CheckPermissions();
     }
 
     @Override
@@ -166,5 +174,25 @@ public class Main2Activity extends AppCompatActivity
     private void OpenFragment(Fragment fragment)
     {
         getSupportFragmentManager().beginTransaction().replace(R.id.content_main, fragment).commit();
+    }
+
+    private void CheckPermissions()
+    {
+        CheckPermission(Manifest.permission.CALL_PHONE);
+        CheckPermission(Manifest.permission.PROCESS_OUTGOING_CALLS);
+        CheckPermission(Manifest.permission.READ_PHONE_STATE);
+        CheckPermission(Manifest.permission.RECORD_AUDIO);
+        CheckPermission(Manifest.permission.READ_EXTERNAL_STORAGE);
+        CheckPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        CheckPermission(Manifest.permission.READ_CONTACTS);
+    }
+
+    private void CheckPermission(String permissionName)
+    {
+        if(ContextCompat.checkSelfPermission(this, permissionName) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,
+                    new String[]{permissionName},
+                    MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+        }
     }
 }
